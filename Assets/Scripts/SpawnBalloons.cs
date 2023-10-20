@@ -34,6 +34,7 @@ public class SpawnBalloons : MonoBehaviour
         Material spawnMaterial = balloonColors[Random.Range(0,balloonColors.Length)];
         var gameObject = Instantiate(balloon, spawnPosition, Quaternion.identity);
         gameObject.GetComponent<MeshRenderer>().material = spawnMaterial;
+        Destroy(gameObject,10f);
         yield return new WaitForSeconds(1f);
         spawnBalloon = null;
     }
