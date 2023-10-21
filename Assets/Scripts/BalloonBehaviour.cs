@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,5 +21,11 @@ public class BalloonBehaviour : MonoBehaviour
     {
         Vector3 gravity = _gravity * balloonGravity * Vector3.up;
         _rigidbody.AddForce(gravity, ForceMode.Acceleration);
+    }
+
+    private void OnMouseDown()
+    {
+        PoppedBalloonsCounter.score++;
+        Destroy(gameObject);
     }
 }
